@@ -1,19 +1,20 @@
 import React from 'react';
 import type { NextPage } from 'next';
 import Layout from '@components/layout';
-import CalendarCard from '@components/common/CalendarCard';
+import CalendarCard from '@components/cards/CalendarCard';
+import EventContainer from '@components/EventContainer';
 
 const Home: NextPage = () => {
     return (
-        <div>
-            <Layout title="Home">
-                <div className="px-8 py-1">
-                    <CalendarCard />
-                    <CalendarCard />
-                    <CalendarCard />
-                </div>
-            </Layout>
-        </div>
+        <Layout title="Home">
+            <div className="px-8 py-1">
+                {Array.from(Array(3).keys()).map((item) => (
+                    <CalendarCard key={item} />
+                ))}
+
+                <EventContainer />
+            </div>
+        </Layout>
     );
 };
 
