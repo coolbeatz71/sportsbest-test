@@ -10,6 +10,8 @@
         "build:template:css": "npx tailwindcss -i ./styles/globals.css -o ./styles/output.css"
     },
     "dependencies": {
+        "@apollo/client": "^3.0.2",
+        "graphql": "^15.3.0",
         "@heathmont/moon-components": "^9.2.4",
         "@heathmont/moon-core": "^9.2.4",
         "@heathmont/moon-core-tw": "^9.2.4",
