@@ -1,8 +1,14 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app';
+import { ThemeProvider, sportsbetDark } from '@heathmont/moon-themes';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+import '@styles/globals.css';
 
-export default MyApp
+const MyApp = ({ Component, pageProps }: AppProps) => {
+    return (
+        <ThemeProvider theme={sportsbetDark}>
+            <Component {...pageProps} />
+        </ThemeProvider>
+    );
+};
+
+export default MyApp;
