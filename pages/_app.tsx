@@ -1,8 +1,19 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import React from 'react';
+import type { AppProps } from 'next/app';
+import { ApolloProvider } from '@apollo/client';
+import { ThemeProvider, sportsbetDark } from '@heathmont/moon-themes';
+import client from '@graphql/config';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+import '@styles/globals.css';
 
-export default MyApp
+const MyApp = ({ Component, pageProps }: AppProps) => {
+    return (
+        <ApolloProvider client={client}>
+            <ThemeProvider theme={sportsbetDark}>
+                <Component {...pageProps} />
+            </ThemeProvider>
+        </ApolloProvider>
+    );
+};
+
+export default MyApp;
