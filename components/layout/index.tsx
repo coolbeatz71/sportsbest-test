@@ -36,9 +36,9 @@ const Layout: FC<ILayoutProps> = ({ title, children }) => {
                 <link rel="canonical" href={_url} />
             </Head>
 
-            <main className={styles.layout__main}>
+            <main>
                 <Header scrolled={scrolled} />
-                <div className={styles.layout__main__content}>{children}</div>
+                <div className={styles.layout__content}>{children}</div>
             </main>
         </div>
     );

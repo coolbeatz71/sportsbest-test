@@ -6,7 +6,7 @@ import PartnerLogo from '../PartnerLogo';
 const PartnersSection: FC = () => {
     return (
         <div className="flex flex-col">
-            <Heading size={24} color="goten.100">
+            <Heading size={20} color="goten.100">
                 Official partners of
             </Heading>
 

@@ -3,6 +3,7 @@
 
 .header {
     width: 100%;
+    background-color: rgba($color: $bg-color, $alpha: 0.5);
     -webkit-backdrop-filter: saturate(180%) blur(50px);
     backdrop-filter: saturate(180%) blur(50px);
 

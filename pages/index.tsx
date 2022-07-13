@@ -1,15 +1,16 @@
 import React from 'react';
 import type { NextPage } from 'next';
 import Layout from '@components/layout';
+import CalendarCard from '@components/common/CalendarCard';
 
 const Home: NextPage = () => {
     return (
         <div>
             <Layout title="Home">
-                <div>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Et eum mollitia cum voluptatibus error!
-                    Quas, recusandae. Tenetur doloremque quos, repellendus culpa neque dolorum. Laboriosam blanditiis
-                    architecto consequuntur, placeat at voluptatibus.
+                <div className="px-8 py-1">
+                    <CalendarCard />
+                    <CalendarCard />
+                    <CalendarCard />
                 </div>
             </Layout>
         </div>

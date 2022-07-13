@@ -1,0 +1,26 @@
+@import 'styles/mixins.scss';
+@import '../../styles/dimensions.scss';
+@import 'styles/colors.scss';
+
+.layout {
+    display: block;
+    margin: auto;
+    height: 100vh;
+
+    @include mediaXL {
+        max-width: $page-max-width;
+    }
+
+    @include mediaLG {
+        max-width: $page-max-width;
+    }
+
+    main {
+        height: 100%;
+        background-color: $bg-color;
+    }
+
+    &__content {
+        margin-top: 1rem;
+    }
+}
