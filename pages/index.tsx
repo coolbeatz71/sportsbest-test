@@ -8,7 +8,7 @@ const Home: NextPage = () => {
     return (
         <Layout title="Home">
             <div className="px-8 py-1">
-                {Array.from(Array(3).keys()).map((item) => (
+                {[0, 1, 2].map((item) => (
                     <CalendarCard key={item} />
                 ))}
 
