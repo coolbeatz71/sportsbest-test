@@ -10,7 +10,7 @@ import EventCardSkeleton from '@components/skeletons/EventCardSkeleton';
 import ErrorAlert from '@components/common/AlertError';
 import ViewMoreEventModal from '@components/modal/ViewMoreEventModal';
 
-const EventContainer: FC = () => {
+const EventsList: FC = () => {
     const [showDialog, setShowDialog] = useState<boolean>(false);
     const [events, setEvents] = useState<IEvent[]>([]);
     const [{ data, fetching, error }] = useQuery<IEventResult>({
@@ -45,4 +45,4 @@ const EventContainer: FC = () => {
     );
 };
 
-export default EventContainer;
+export default EventsList;
