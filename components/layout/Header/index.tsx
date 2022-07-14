@@ -11,7 +11,7 @@ export interface IHeaderProps {
 const Header: FC<IHeaderProps> = ({ scrolled }) => {
     return (
         <div className={styles.header}>
-            <header data-scroll={scrolled} className="sticky top-0 px-8 py-5">
+            <header data-scroll={scrolled} className="px-8 py-5">
                 <div className="grid grid grid-cols-3 gap-4">
                     <div className="col-span-2 flex flex-row items-center">
                         <Logo canRedirect className={styles.header__logo} />
