@@ -7,8 +7,8 @@ export interface IPartnerLogoProps {
 
 const PartnerLogo: FC<IPartnerLogoProps> = ({ imgUrl }) => (
     <div className="flex flex-col items-start pt-1">
-        <div className="bg-gray-600 p-3 flex items-center rounded-full">
-            <Image src={imgUrl} width={64} height={64} />
+        <div data-icon className="bg-gray-600 p-3 flex items-center rounded-full">
+            <Image src={imgUrl} width={40} height={40} />
         </div>
     </div>
 );

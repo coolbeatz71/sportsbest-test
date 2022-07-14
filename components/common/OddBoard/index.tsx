@@ -10,6 +10,7 @@ const oddBoardClasses = `col-span-1 flex flex-row items-center justify-center bg
 
 const OddBoard: FC<IOddBoardProps> = ({ odds, onClick, isClickable }) => (
     <div
+        data-odd
         onClick={onClick}
         className={`${oddBoardClasses} ${isClickable ? 'cursor-pointer hover:bg-gray-500' : 'cursor-not-allowed'}`}
     >

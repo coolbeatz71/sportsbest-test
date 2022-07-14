@@ -7,6 +7,8 @@ import { IEvent, ISelection } from '@interfaces/query';
 import { MARKET_FILTER } from '@constants/api';
 import UPDATE_EVENT_SUBSCRIPTION from '@graphql/subscription/event';
 
+import styles from './index.module.scss';
+
 type IEventUpdate = { eventUpdate: IEvent };
 export interface IEventCardProps {
     event: IEvent;
@@ -32,21 +34,23 @@ const EventCard: FC<IEventCardProps> = ({ event }) => {
     }, [data]);
 
     return !isEmpty(filteredMarkets) ? (
-        <div className="rounded bg-gray-900 rounded-md overflow-hidden bg-opacity-40 p-3 my-4">
-            <div className="grid grid-cols-6 gap-3">
-                <ScoreBoard startTime={startTime} competitors={competitors} />
-                {filteredMarkets[0].selections.map((select) => {
-                    const isClickable = select.odds !== null;
+        <div className={styles.eventCard}>
+            <div className="rounded bg-gray-900 rounded-md overflow-hidden bg-opacity-40 p-3 my-4 h-full">
+                <div className="grid grid-cols-6 gap-3">
+                    <ScoreBoard startTime={startTime} competitors={competitors} />
+                    {filteredMarkets[0].selections.map((select) => {
+                        const isClickable = select.odds !== null;
 
-                    return (
-                        <OddBoard
-                            key={select.id}
-                            odds={select.odds}
-                            isClickable={isClickable}
-                            onClick={() => onClickOdds(isClickable, select)}
-                        />
-                    );
-                })}
+                        return (
+                            <OddBoard
+                                key={select.id}
+                                odds={select.odds}
+                                isClickable={isClickable}
+                                onClick={() => onClickOdds(isClickable, select)}
+                            />
+                        );
+                    })}
+                </div>
             </div>
         </div>
     ) : null;
