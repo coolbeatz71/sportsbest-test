@@ -38,13 +38,8 @@ module.exports = {
                 'react/no-children-prop': 'off',
                 'react/display-name': 'off',
                 'no-self-assign': 'off',
-                '@typescript-eslint/explicit-function-return-type': [
-                    'warn',
-                    {
-                        allowExpressions: true,
-                        allowConciseArrowFunctionExpressionsStartingWithVoid: true,
-                    },
-                ],
+                '@typescript-eslint/explicit-function-return-type': 'off',
+                '@typescript-eslint/explicit-module-boundary-types': 'off',
             },
         },
     ],

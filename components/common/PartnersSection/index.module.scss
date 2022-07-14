@@ -1,0 +1,19 @@
+@import 'styles/mixins.scss';
+
+.partnerSection {
+    @include mediaXS {
+        h3 {
+            font-size: 1rem;
+        }
+
+        [data-icon='true'] {
+            width: 45px;
+            height: 45px;
+
+            & > span {
+                width: 36px !important;
+                height: 36px !important;
+            }
+        }
+    }
+}

@@ -8,9 +8,7 @@ import { MAX_LIMIT } from '@constants/api';
 import { GET_ALL_EVENTS_QUERY } from '@graphql/query/events';
 import { IEvent, IEventResult } from '@interfaces/query';
 import { useQuery } from 'urql';
-import ErrorAlert from '@components/common/AlertError';
-import EventCardSkeleton from '@components/skeletons/EventCardSkeleton';
-import EventCard from '@components/cards/EventCard';
+import EventsContent from '@components/common/EventsContent';
 
 export interface IViewMoreEventModalProps {
     showDialog: boolean;
@@ -46,13 +44,7 @@ const ViewMoreEventModal: FC<IViewMoreEventModalProps> = ({ showDialog, setShowD
                 </Header>
             }
         >
-            <>
-                {error ? <ErrorAlert message={error.message} /> : null}
-
-                {fetching ? Array.from(Array(MAX_LIMIT).keys()).map((item) => <EventCardSkeleton key={item} />) : null}
-
-                {events ? events.map((event) => <EventCard key={event.category.id} event={event} />) : null}
-            </>
+            <EventsContent limit={MAX_LIMIT} fetching={fetching} error={error} events={events} />
         </Dialog>
     );
 };

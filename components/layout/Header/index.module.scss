@@ -1,11 +1,12 @@
 @import 'styles/colors.scss';
 @import 'styles/dimensions.scss';
+@import 'styles/mixins.scss';
 
 .header {
-    width: $page-max-width;
-    position: fixed;
+    position: sticky;
     top: 0;
     z-index: 99;
+    width: 100%;
 
     background-color: rgba($color: $bg-color, $alpha: 0.8);
     -webkit-backdrop-filter: saturate(180%) blur(50px);
@@ -32,5 +33,11 @@
 
         width: $max-logo-width;
         height: $min-logo-height;
+    }
+
+    @include mediaXS {
+        &__logo {
+            width: calc(#{$max-logo-width} / 1.2);
+        }
     }
 }
