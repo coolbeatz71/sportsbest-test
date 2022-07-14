@@ -26,11 +26,9 @@ const ScoreBoard: FC<IScoreBoardProps> = ({ competitors, startTime }) => (
                 </div>
             ))}
 
-            <div>
-                <Text size={18} color="trunks.100">
-                    {dayjs(startTime).format('DD/MM h:mm A')}
-                </Text>
-            </div>
+            <Text size={16} color="trunks.100">
+                {dayjs(startTime).format('DD/MM h:mm A')}
+            </Text>
         </div>
     </div>
 );

@@ -1,14 +1,12 @@
 import React, { FC, useEffect, useState } from 'react';
-import EventCard from '@components/cards/EventCard';
 import { Heading } from '@heathmont/moon-core';
 import { useQuery } from 'urql';
 import { Button } from '@heathmont/moon-core';
 import GET_EVENTS_QUERY from '@graphql/query/events';
 import { MIN_LIMIT } from '@constants/api';
 import { IEvent, IEventResult } from '@interfaces/query';
-import EventCardSkeleton from '@components/skeletons/EventCardSkeleton';
-import ErrorAlert from '@components/common/AlertError';
 import ViewMoreEventModal from '@components/modal/ViewMoreEventModal';
+import EventsContent from '@components/common/EventsContent';
 
 const EventsList: FC = () => {
     const [showDialog, setShowDialog] = useState<boolean>(false);
@@ -32,11 +30,7 @@ const EventsList: FC = () => {
 
             <ViewMoreEventModal showDialog={showDialog} setShowDialog={setShowDialog} />
 
-            {error ? <ErrorAlert message={error.message} /> : null}
-
-            {fetching ? Array.from(Array(MIN_LIMIT).keys()).map((item) => <EventCardSkeleton key={item} />) : null}
-
-            {events ? events.map((event) => <EventCard key={event.category.id} event={event} />) : null}
+            <EventsContent limit={MIN_LIMIT} fetching={fetching} error={error} events={events} />
 
             <Button size="large" color="piccolo.100" fullWidth onClick={onShowDialog}>
                 See all feature events

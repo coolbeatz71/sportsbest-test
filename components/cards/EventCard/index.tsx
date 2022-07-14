@@ -7,6 +7,7 @@ import { IEvent, ISelection } from '@interfaces/query';
 import { MARKET_FILTER } from '@constants/api';
 import UPDATE_EVENT_SUBSCRIPTION from '@graphql/subscription/event';
 
+type IEventUpdate = { eventUpdate: IEvent };
 export interface IEventCardProps {
     event: IEvent;
 }
@@ -16,11 +17,12 @@ const EventCard: FC<IEventCardProps> = ({ event }) => {
 
     const { competitors, markets, startTime } = updatedEvent;
     const filteredMarkets = markets.filter((market) => market.name === MARKET_FILTER);
+
     const onClickOdds = (isClickable: boolean, selection: ISelection) => {
         if (isClickable) console.log('selection', selection);
     };
 
-    const [{ data }] = useSubscription<{ eventUpdate: IEvent }>({
+    const [{ data }] = useSubscription<IEventUpdate>({
         query: UPDATE_EVENT_SUBSCRIPTION,
         variables: { eventId: updatedEvent.id },
     });
