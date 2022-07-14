@@ -2,7 +2,7 @@ import React from 'react';
 import type { NextPage } from 'next';
 import Layout from '@components/layout';
 import CalendarCard from '@components/cards/CalendarCard';
-import EventContainer from '@components/EventContainer';
+import EventsList from '@components/EventsList';
 
 const Home: NextPage = () => {
     return (
@@ -12,7 +12,7 @@ const Home: NextPage = () => {
                     <CalendarCard key={item} />
                 ))}
 
-                <EventContainer />
+                <EventsList />
             </div>
         </Layout>
     );
